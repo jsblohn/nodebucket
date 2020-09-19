@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  polyfills.ts
+; Author: Professor Krasso
+; Date:   19 September 2020
+; Modified By: Janet Blohn
+; Description: Exercise 5.2 – Navigation and Layouts
+; Description by Angular below
+============================================
+*/
 /**
  * This file includes polyfills needed by Angular and is loaded before the app.
  * You can add your own extra polyfills to this file.

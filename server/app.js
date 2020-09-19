@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  app.js
+; Author: Professor Krasso
+; Date:   19 September 2020
+; Modified By: Janet Blohn
+; Description: nodebucket project
+; Server module for Node.js
+============================================
+*/
 /**
  * Require statements
  */

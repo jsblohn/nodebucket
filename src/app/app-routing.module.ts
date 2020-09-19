@@ -1,3 +1,15 @@
+/*
+============================================
+; Title:  app-routing.module.ts
+; Author: Professor Krasso
+; Date:   19 September 2020
+; Modified By: Janet Blohn
+; Description: nodebucket project
+; Routing module for nodebucket
+============================================
+*/
+
+/* Import required modules from Angular */
 import { HomeComponent } from './pages/home/home.component';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { NgModule } from '@angular/core';

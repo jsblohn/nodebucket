@@ -1,3 +1,15 @@
+/*
+============================================
+; Title:  app.component.ts
+; Author: Professor Krasso
+; Date:   19 September 2020
+; Modified By: Janet Blohn
+; Description: nodebucket project
+; TypeScript for app.component for nodebucket
+============================================
+*/
+
+/* Import required modules from Angular */
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +18,5 @@ import { Component } from '@angular/core';
   styles: [``]
 })
 export class AppComponent {
-  
+
 }

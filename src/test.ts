@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  test.ts
+; Author: Professor Krasso
+; Date:   19 September 2020
+; Modified By: Janet Blohn
+; Description: nodebucket project
+; Required by karma.conf.js, loads recursively all .spec and framework files
+============================================
+*/
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'zone.js/dist/zone-testing';

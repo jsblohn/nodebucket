@@ -1,3 +1,13 @@
+/*
+============================================
+; Title:  app.po.ts
+; Author: Professor Krasso
+; Date:   19 September 2020
+; Modified By: Janet Blohn
+; Description: nodebucket project
+; AppPage module
+============================================
+*/
 import { browser, by, element } from 'protractor';
 
 export class AppPage {
