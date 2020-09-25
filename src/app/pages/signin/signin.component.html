@@ -1,0 +1,51 @@
+<!--
+=============================================================
+ Title:  sign-in.component.html
+ Author: Professor Krasso
+ Date:   22 September 2020
+ Modified By: Janet Blohn
+ Description: nodebucket project
+ HTML for the signin.component of nodebucket
+=============================================================
+-->
+
+<!-- Create a form for sign-in use -->
+
+<div fxLayout="column">
+  <div fxFlex *ngIf="error" class="msg-error">
+    {{ error }}
+  </div>
+  <div  fxFlex class='mat-elevation-z8 signin-container'>
+    <mat-card>
+      <mat-card-title>
+        Employee Log In Page
+      </mat-card-title>
+      <mat-card-subtitle>
+        You must enter a valid employeeID to proceed
+      </mat-card-subtitle>
+      <form [formGroup]="form" (ngSubmit)="login(); form.reset();">
+        <mat-card-content>
+          <mat-form-field>
+            <input matInput
+              [formControl]="form.controls['empId']"
+              placeholder="Employee ID" />
+            <mat-error
+              *ngIf="form.controls['empId'].hasError('required')">
+                EmployeeID is a required field
+            </mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions layout-align="end">
+          <!-- Disable the Sign-in button until an Employee ID is entered in the field -->
+          <button type="submit" fxFlex mat-raised-button color="primary" [disabled]="!form.valid">Sign-in</button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+</div>
+
+
+
+
+
+

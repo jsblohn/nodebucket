@@ -2,7 +2,7 @@
 =============================================================
  Title:  base-layout.component.html
  Author: Professor Krasso
- Date:   19 September 2020
+ Date:   24 September 2020
  Modified By: Janet Blohn
  Description: nodebucket project
  HTML for the base-layout.component of nodebucket
@@ -10,18 +10,17 @@
 -->
 <div fxLayout="column">
 
-    <!-- navigation -->
+  <!-- navigation -->
     <nav fxFlex>
-      <mat-toolbar>
+      <mat-toolbar fxLayout="row">
         <!-- navbar container -->
         <div class="navbar-container">
           <!-- logo -->
           <button class="logo" routerLink="/" mat-button>nodebucket</button>
-
           <button class="navbar-link" routerLink="/" mat-button>Home</button>
           <button class="navbar-link" mat-button>About</button>
+          <button class="navbar-link" layout-align="end" mat-button (click)="signOut()">Sign out</button>
         </div>
-
       </mat-toolbar>
     </nav>
 
@@ -42,5 +41,4 @@
         </mat-toolbar>
       </footer>
     </div>
-
   </div>
