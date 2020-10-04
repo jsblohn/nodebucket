@@ -37,3 +37,12 @@
   .bu-link:hover {
     text-decoration: underline;
   }
+
+  .float-end {
+    /*float: right;*/
+    /*margin-left: 90%;*/
+    position: absolute;
+    right: 0px;
+    margin: 0;
+    
+  }

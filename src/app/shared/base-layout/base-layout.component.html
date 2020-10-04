@@ -12,15 +12,17 @@
 
   <!-- navigation -->
     <nav fxFlex>
-      <mat-toolbar fxLayout="row">
+      <mat-toolbar fxLayout="row" color="primary">
         <!-- navbar container -->
+
         <div class="navbar-container">
           <!-- logo -->
           <button class="logo" routerLink="/" mat-button>nodebucket</button>
           <button class="navbar-link" routerLink="/" mat-button>Home</button>
           <button class="navbar-link" mat-button>About</button>
-          <button class="navbar-link" layout-align="end" mat-button (click)="signOut()">Sign out</button>
-        </div>
+         <!-- <button class="navbar-link" layout-align="end" mat-button (click)="signOut()">Sign out</button> -->
+
+        <button class="navbar-link float-end" mat-button (click)="signOut()">Sign out</button></div>
       </mat-toolbar>
     </nav>
 

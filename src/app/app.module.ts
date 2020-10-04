@@ -24,6 +24,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatListModule } from '@angular/material/list';
+//import { Snackbar } from '@angular/material/snack-bar';
+//import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
 // Import required application modules and components
 import { AppRoutingModule } from './app-routing.module';
@@ -57,6 +59,7 @@ import { SignInComponent } from './pages/signin/signin.component';
     MatFormFieldModule,
     MatInputModule,
     MatListModule
+
   ],
 
   providers: [],

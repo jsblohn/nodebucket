@@ -10,12 +10,15 @@
 */
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const Item = require('./item');
 
-// Employee Schema, Sprint 1
+// Employee Schema
 let employeeSchema = new Schema({
-    empId: {type: Number, required: true, unique: true, dropDups: true},
-    firstName: {type: String, required: true},
-    lastName: {type: String, required: true}
+    empId: {type: Number, unique: true, dropDups: true},
+    firstName: {type: String},
+    lastName: {type: String},
+    toDos: [Item],
+    done: [Item]
   }, {collection: 'employees'});
 
 module.exports = mongoose.model('Employee', employeeSchema);

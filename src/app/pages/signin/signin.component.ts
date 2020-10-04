@@ -10,11 +10,16 @@
 */
 
 /* Import required modules from Angular */
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { HttpClient } from '@angular/common/http';
+import { MatFormFieldControl } from '@angular/material/form-field';
+//import { MatSnackBar, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
+//import { MatSnackBar } from '@angular/material/snack-bar';
+
+//@Inject(MAT_SNACK_BAR_DATA)
 
 @Component({
   selector: 'app-signin',
@@ -28,7 +33,9 @@ export class SignInComponent implements OnInit {
   // Create variables
   form: FormGroup;
   error: string;
+  
 
+// Possibly add , private snackBar: SnackBar to end of constructor
   constructor(private router: Router, private cookieService: CookieService, private fb: FormBuilder, private http: HttpClient) {
 
    }
@@ -50,6 +57,10 @@ export class SignInComponent implements OnInit {
         this.router.navigate(['/'])
       } else {
           this.error = 'The employee ID you entered is invalid, please try again.'
+          /*this.snackBar.open('The employee ID you entered is invalid, please try again', 'ERROR', {
+            duration: 3000,
+            verticalPosition: 'top'
+          });*/
         }
     })
   }
