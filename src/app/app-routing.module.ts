@@ -1,4 +1,3 @@
-
 /*
 ============================================
 ; Title:  app-routing.module.ts
@@ -12,12 +11,14 @@
 
 /* Import required modules from Angular */
 import { HomeComponent } from './pages/home/home.component';
+import { AboutComponent } from './pages/about/about.component';
 import { BaseLayoutComponent } from './shared/base-layout/base-layout.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './shared/auth.guard';
 import { AuthLayoutComponent} from './shared/auth-layout/auth-layout.component';
 import { SignInComponent } from './pages/signin/signin.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -28,8 +29,14 @@ const routes: Routes = [
         path: '',
         component: HomeComponent,
         canActivate: [AuthGuard]
+      },
+      {
+        path: 'about',
+        component: AboutComponent
+
       }
     ]
+
   },
   {
     path: 'session',
@@ -38,13 +45,22 @@ const routes: Routes = [
       {
         path: 'signin',
         component: SignInComponent
+      },
+      {
+        path: 'not-found',
+        component: NotFoundComponent
       }
     ]
+  },
+  {
+    path: '**',
+    redirectTo: 'session/not-found'
   }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {useHash: true, enableTracing: false, scrollPositionRestoration: 'enabled'})],
+
   exports: [RouterModule]
 })
 

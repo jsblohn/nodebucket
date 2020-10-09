@@ -28,14 +28,13 @@
           <mat-form-field>
             <input matInput
               [formControl]="form.controls['empId']"
-              placeholder="Employee ID" />
-              
+              placeholder="Employee ID"/>
             <mat-error
               *ngIf="form.controls['empId'].hasError('required') && form.controls['empId'].touched">
-                EmployeeID is a required field
+              EmployeeID is a required field
             </mat-error>
             <mat-error *ngIf="form.controls['empId'].hasError('pattern') && (form.controls['empId'].touched || form.controls['empId'].dirty)" class="alert alert-danger">
-            Employee ID must ba a numerical value
+              Employee ID must ba a numerical value
             </mat-error>
           </mat-form-field>
         </mat-card-content>

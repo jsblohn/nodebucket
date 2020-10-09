@@ -15,12 +15,16 @@
 
   .main-content {
     padding-left: 30px;
+    min-height: 90%; /* added 10/06 */
+    height: 90%;
   }
 
   .footer {
     bottom: 0;
     position: absolute;
-    width: 100%;
+    /*position: bottom;*/
+        width: 100%;
+        background-color: darkgray;
   }
 
   .footer-content {
@@ -28,10 +32,13 @@
     font-weight: lighter;
     padding-left: 100px;
     letter-spacing: 3px;
+
+
   }
 
   .bu-link {
     text-decoration: none;
+    color: purple;
   }
 
   .bu-link:hover {
@@ -44,5 +51,5 @@
     position: absolute;
     right: 0px;
     margin: 0;
-    
+
   }

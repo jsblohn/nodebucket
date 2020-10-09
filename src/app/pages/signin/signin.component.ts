@@ -33,7 +33,7 @@ export class SignInComponent implements OnInit {
   // Create variables
   form: FormGroup;
   error: string;
-  
+
 
 // Possibly add , private snackBar: SnackBar to end of constructor
   constructor(private router: Router, private cookieService: CookieService, private fb: FormBuilder, private http: HttpClient) {

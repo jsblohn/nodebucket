@@ -1,0 +1,35 @@
+<!--
+============================================
+; Title:  not-found.component.ts
+; Author: Professor Krasso
+; Date:   06 October 2020
+; Modified By: Janet Blohn
+; Description: nodebucket project
+; TypeScript modules for the Not Found component
+============================================
+-->
+<div fxLayout="column" fxFlexFill>
+  <mat-card class="mat-card-color">
+    <h1 class="statusCode">404</h1>
+  </mat-card>
+  <mat-card fxFlex class="mat-elevation-z0 mat-card mat-card-color">
+  <!-- Notify the user of the error code and how to get back to the home page -->
+    <mat-card-title>
+      <h1>Whatever you're looking for can't be found!</h1>
+    </mat-card-title>
+    <mat-card-content>
+    <!-- <h4>Error code: 404 (Page not found)</h4> -->
+      <button mat-button routerLink="/">
+        <h2>To Do: Click here to return to the home page.</h2>
+      </button>
+    </mat-card-content>
+  </mat-card>
+  <!--<button mat-button routerLink="/home">
+
+    <h2>To Do: Click here to return to the home page.</h2>
+  </button>-->
+  <!--<button mat-button a href="home">
+
+    <h2>To Do: Click here to return to the home page.</h2>
+  </button>-->
+</div>
