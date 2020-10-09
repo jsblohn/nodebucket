@@ -476,8 +476,7 @@ class AuthGuard {
         this.router = router;
         this.cookieService = cookieService;
     }
-    canActivate(next, // was route
-    state) {
+    canActivate(route, state) {
         const sessionUser = this.cookieService.get('session_user');
         if (sessionUser) {
             // If the empId is valid, allow sign in
@@ -1137,15 +1136,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/*window.addEventListener ('beforeunload', function() {
+  delete ['cookieService'];
+
+});*/
+//}
 class BaseLayoutComponent {
-    constructor(cookieService, router) {
+    constructor(cookieService, router, elementRef) {
         this.cookieService = cookieService;
         this.router = router;
+        this.elementRef = elementRef;
         this.year = Date.now();
+        /*elementRef.nativeElement.addEventListener
+        ('beforeunload', () => {
+          this.cookieService.delete(session_user)
+        this.cookieService.deleteAll()});*/
     }
     ngOnInit() {
         // Delete any cookies that may be attached at initialization and render signin screen
-        this.cookieService.deleteAll();
+        //this.cookieService.deleteAll();
+        /* @HostListener('beforeunload'
+           this.cookieService.deleteAll())*/
+        this.elementRef.nativeElement.addEventListener('beforeunload', () => {
+            //this.cookieService.delete(session_user)
+            this.cookieService.deleteAll();
+        });
     }
     // Delete cookies on sign out and return to the signin screen
     signOut() {
@@ -1153,7 +1168,7 @@ class BaseLayoutComponent {
         this.router.navigate(['/session/signin']);
     }
 }
-BaseLayoutComponent.ɵfac = function BaseLayoutComponent_Factory(t) { return new (t || BaseLayoutComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_1__["CookieService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"])); };
+BaseLayoutComponent.ɵfac = function BaseLayoutComponent_Factory(t) { return new (t || BaseLayoutComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](ngx_cookie_service__WEBPACK_IMPORTED_MODULE_1__["CookieService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"])); };
 BaseLayoutComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: BaseLayoutComponent, selectors: [["app-base-layout"]], decls: 25, vars: 4, consts: [["fxLayout", "column"], ["fxFlex", ""], ["fxLayout", "row", 1, "mat-primary"], [1, "navbar-container"], ["mat-button", "", "routerLink", "/", "mat-button", "", 1, "logo"], ["mat-button", "", "routerLink", "/", 1, "navbar-link"], ["mat-button", "", "routerLink", "/about", 1, "navbar-link"], ["mat-button", "", 1, "navbar-link", "float-end", 3, "click"], ["fxFlex", "100%;", 1, "main-content"], ["fxLayout", "row"], ["fxFlexOffset", "auto", 1, "footer", "footer-content", "mat-primary"], ["href", "https://www.bellevue.edu/", "target", "_blank", 1, "bu-link"]], template: function BaseLayoutComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 0);
@@ -1209,7 +1224,7 @@ BaseLayoutComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
                 templateUrl: './base-layout.component.html',
                 styleUrls: ['./base-layout.component.css']
             }]
-    }], function () { return [{ type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_1__["CookieService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
+    }], function () { return [{ type: ngx_cookie_service__WEBPACK_IMPORTED_MODULE_1__["CookieService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ElementRef"] }]; }, null); })();
 
 
 /***/ }),
