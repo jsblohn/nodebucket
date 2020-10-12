@@ -21,44 +21,27 @@ import { HostListener, ElementRef } from '@angular/core';
   styleUrls: ['./base-layout.component.css']
 })
 
-
-  /*window.addEventListener ('beforeunload', function() {
-    delete ['cookieService'];
-
-  });*/
-
-//}
-
 export class BaseLayoutComponent implements OnInit {
 
   year: number = Date.now();
 
 
   constructor(private cookieService: CookieService, private router: Router, private elementRef: ElementRef) {
-    /*elementRef.nativeElement.addEventListener
-    ('beforeunload', () => {
-      this.cookieService.delete(session_user)
-    this.cookieService.deleteAll()});*/
+    // Clear cookies if the user hits the "X" on their browser instead of signing out
+    window.onbeforeunload = function() {
+      console.log(this.sessionUser);
+      cookieService.deleteAll('sessionUser')
+    };
   }
 
   ngOnInit(): void {
-    // Delete any cookies that may be attached at initialization and render signin screen
-    //this.cookieService.deleteAll();
-   /* @HostListener('beforeunload'
-      this.cookieService.deleteAll())*/
-      this.elementRef.nativeElement.addEventListener
-    ('beforeunload', () => {
-      //this.cookieService.delete(session_user)
-    this.cookieService.deleteAll()});
   }
 
   // Delete cookies on sign out and return to the signin screen
   signOut() {
+    console.log(this.cookieService.getAll());
     this.cookieService.deleteAll();
     this.router.navigate(['/session/signin']);
+
   }
- /*class KillCookie {
-    @HostListener('beforeunload', [CookieService.deleteAll()])*/
-
-
 }

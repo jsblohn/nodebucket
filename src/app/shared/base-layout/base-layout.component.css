@@ -1,55 +1,61 @@
 .logo {
-    margin-left: 75px;
-    font-size: 24px;
-    font-weight: lighter;;
-  }
+    max-height: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
 
-  .navbar-container {
-    padding: 5px;
-  }
+.logo img {
+    display: block;
+    width: 58px;
+    height: 58px;
+}
 
-  .navbar-link {
-    font-size: 24px;
-    font-weight: lighter;
-  }
+.navbar-container {
+  width: 100%;
+}
 
-  .main-content {
-    padding-left: 30px;
-    min-height: 90%; /* added 10/06 */
-    height: 90%;
-  }
+.navbar-link {
+  font-size: 24px;
+  font-weight: lighter;
+}
 
-  .footer {
-    bottom: 0;
-    position: absolute;
-    /*position: bottom;*/
-        width: 100%;
-        background-color: darkgray;
-  }
+.main-content {
+  padding-left: 30px;
+  min-height: 90%;
+  height: 90%;
+}
 
-  .footer-content {
-    font-size: 16px;
-    font-weight: lighter;
-    padding-left: 100px;
-    letter-spacing: 3px;
+.footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: darkgray;
+}
 
+.footer-content {
+  font-size: 16px;
+  font-weight: lighter;
+  padding-left: 100px;
+  letter-spacing: 3px;
+}
 
-  }
+.bu-link {
+  text-decoration: none;
+  color: purple;
+  font-weight: strong;
+}
 
-  .bu-link {
-    text-decoration: none;
-    color: purple;
-  }
+.bu-link:hover {
+  text-decoration: underline;
+}
 
-  .bu-link:hover {
-    text-decoration: underline;
-  }
+.float-end {
+  position: absolute;
+  right: 0px;
+  margin: 0;
+}
 
-  .float-end {
-    /*float: right;*/
-    /*margin-left: 90%;*/
-    position: absolute;
-    right: 0px;
-    margin: 0;
-
-  }
+.mat-toolbar {
+  padding-top: 10px;
+}

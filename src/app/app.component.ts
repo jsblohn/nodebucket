@@ -10,7 +10,7 @@
 */
 
 /* Import required modules from Angular */
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -18,5 +18,4 @@ import { Component } from '@angular/core';
   styles: [``]
 })
 export class AppComponent {
-
 }

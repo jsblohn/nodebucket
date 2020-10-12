@@ -1,12 +1,3 @@
-/*.statusCode {
-  width: 100%;
-  font-family: 'Rye', cursive, Roboto, "Helvetica Neue", sans-serif;
-  font-size: 200px;
-  color: red;
-  /*margin: 50px auto
-  text-align: center;
-}*/
-
 h1 {
   line-height: 100%;
 
@@ -21,16 +12,7 @@ h1 {
 .mat-card {
   text-align: center;
   display: block;
-  /*margin-top: 10%;*/
   margin-left: auto;
   margin-right: auto;
   width: 98%;
 }
-
-/*.mat-card-title {
-  height: 40%;
-
-  font-family: 'Rye', cursive, Roboto, "Helvetica Neue", sans-serif;
-  color: red;
-
-}*/

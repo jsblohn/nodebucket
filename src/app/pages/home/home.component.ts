@@ -13,19 +13,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
-//import { HttpClient } from '@angular/common/http';
 import { TaskService } from './../../shared/task.service';
 import { Item } from '../../shared/item.interface';
 import { Employee } from '../../shared/employee.interface';
 import { CookieService } from 'ngx-cookie-service';
 import { CreateTaskDialogComponent } from './../../shared/create-task-dialog/create-task-dialog.component';
-//import { fromEventPattern } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
 export class HomeComponent implements OnInit {
   // find the tasks
   toDos: Item[];
@@ -46,13 +45,6 @@ export class HomeComponent implements OnInit {
       this.employee = res.data;
       console.log("Employee object");
       console.log(this.employee);
-
-      /*this.toDos = res['data'].toDos;
-      this.done = res['data'].done;
-
-      console.log(this.toDos);
-      console.log(this.done);*/
-
     }, err => {
       console.log(err);
     }, () => {
@@ -69,6 +61,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // Drag and Drop logic to move and rearrange the tasks
   drop(event: CdkDragDrop<any[]>) {
     if(event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -97,6 +90,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  // Create a new task
   openCreateTaskDialog() {
     const dialogRef = this.dialog.open(CreateTaskDialogComponent, {
       disableClose: true
@@ -117,9 +111,10 @@ export class HomeComponent implements OnInit {
 
   }
 
+  // Delete tasks chosen for deletion
   deleteTask(taskId: string) {
     if (taskId) {
-      console.log("Task item: ${taskId} has been deleted");
+      console.log(`Task item: ${taskId} has been deleted`);
 
       this.taskService.deleteTask(this.empId, taskId).subscribe(res => {
         this.employee = res.data;
@@ -133,5 +128,4 @@ export class HomeComponent implements OnInit {
 
     }
   }
-
 }

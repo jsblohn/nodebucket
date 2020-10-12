@@ -8,6 +8,7 @@
  HTML for the nodebucket CreateTaskDialog Component
 =============================================================
 -->
+<!-- Creates the form to add a new task -->
 <h2 mat-dialog-title>Add new task</h2>
 <mat-dialog-content [formGroup]="taskForm">
   <mat-form-field style="width: 200px;">
@@ -15,6 +16,7 @@
   </mat-form-field>
 </mat-dialog-content>
 
+<!-- Cancel out or create a new task-->
 <mat-dialog-actions fxLayoutAlign="end">
   <button mat-button (click)="cancel()">Cancel</button>
   <button mat-button [disabled]="!taskForm.valid" (click)="createTask()">Create Task</button>

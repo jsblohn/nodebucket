@@ -34,7 +34,7 @@
 
 /* Styles for the Task Management page */
 .create-task-container {
-  width: 35%;
+  width: 40%;
   margin: 0 auto;
 }
 
@@ -48,7 +48,7 @@
   min-height: 68px;
   background: white;
   border-radius: 4px;
-  overflow: hidden;
+  overflow: auto;
   display: block;
 }
 

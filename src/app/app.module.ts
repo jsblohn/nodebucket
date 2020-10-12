@@ -9,17 +9,16 @@
 ============================================
 */
 
+/* Import required modules from Angular */
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -28,8 +27,6 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-//import { Snackbar } from '@angular/material/snack-bar';
-//import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
 // Import required application modules and components
 import { AppRoutingModule } from './app-routing.module';
@@ -65,9 +62,6 @@ import { CreateTaskDialogComponent } from './shared/create-task-dialog/create-ta
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    //FormBuilder,
-    //FormGroup,
-    //Validators,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
@@ -76,7 +70,6 @@ import { CreateTaskDialogComponent } from './shared/create-task-dialog/create-ta
     MatDialogModule,
     MatMenuModule,
     DragDropModule
-
   ],
 
   providers: [],
