@@ -27,13 +27,14 @@ const routes: Routes = [
     component: BaseLayoutComponent,
     children: [
       {
-        path: 'about',
-        component: AboutComponent,
-      },
-      {
         path: '',
         component: HomeComponent,
         canActivate: [AuthGuard]
+      },
+      {
+        path: 'about',
+        component: AboutComponent,
+        canActivate: [AuthGuard] 
       }
     ]
   },

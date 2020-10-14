@@ -9,48 +9,46 @@
 =============================================================
 -->
 
-<div fxLayout="column">
+<div fxLayout="column" class="page-container">
 
   <!-- navigation -->
-    <nav fxFlex>
-      <mat-toolbar fxLayout="row wrap" color="primary">
-        <!-- navbar container -->
-        <mat-toolbar-row>
-          <div class="navbar-container">
-            <div fxLayout="row" >
-              <div style="width: 40%;">
-                <button mat-button class="navbar-link" routerLink="/">Home</button>
-                <button mat-button class="navbar-link" routerLink="/about">About</button>
-              </div>
-              <!-- logo -->
-              <button mat-button class="logo">
-                <img src="./assets/nodebucket_logo.jpg" />
-              </button>
+  <nav fxFlex>
+    <mat-toolbar fxLayout="row wrap" color="primary">
+      <!-- navbar container -->
+      <mat-toolbar-row>
+        <div class="navbar-container">
+          <div fxLayout="row" >
+            <div style="width: 40%;">
+              <button mat-button class="navbar-link" routerLink="/">Home</button>
+              <button mat-button class="navbar-link" routerLink="/about">About</button>
+            </div>
+            <!-- logo -->
+            <button mat-button class="logo">
+              <img src="./assets/nodebucket_logo.jpg" />
+            </button>
 
-              <div style="width: 40%">
-                <button mat-button class="navbar-link float-end" mat-button (click)="signOut()">Sign out</button>
-              </div>
+            <div style="width: 40%">
+              <button mat-button class="navbar-link float-end" mat-button (click)="signOut()">Sign out</button>
             </div>
           </div>
-        </mat-toolbar-row>
-      </mat-toolbar>
-    </nav>
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </nav>
 
-    <!-- main content -->
-    <div fxFlex>
-      <main class="main-content" fxFlex="100%;">
-        <router-outlet></router-outlet>
-      </main>
-    </div>
+  <!-- main content -->
+  <div fxFlex>
+    <main class="main-content" fxFlex="100%;">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 
-    <!-- footer -->
-    <div fxLayout="row">
-      <div fxFlex>
-        <mat-toolbar class="footer footer-content mat-primary" fxFlexOffset="auto">
-          <p>
-            &copy; {{year | date: 'yyyy'}} - nodebucket - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
-          </p>
-        </mat-toolbar>
-    </div>
+  <!-- footer -->
+  <div fxLayout="row">
+    <mat-toolbar fxFlex class="footer footer-content mat-primary" fxFlexOffset="auto">
+      <p>
+        &copy; {{year | date: 'yyyy'}} - nodebucket - <a href="https://www.bellevue.edu/" class="bu-link" target="_blank">Bellevue University</a>
+      </p>
+    </mat-toolbar>
   </div>
 </div>
